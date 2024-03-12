@@ -32,7 +32,7 @@ app.post("/add", (req, res) => {
             email
         };
         sampleUserData.push(newUser);
-        res.json({message: "User added", success: true, user: newUser});
+        res.json({message: "User added", success: true});
     }
 })
 
@@ -45,7 +45,7 @@ app.put('/update/:id', (req, res) => {
     } else {
         user.firstName = firstName;
         user.email = email;
-        res.json({message: "User updated", success: true, user});
+        res.json({message: "User updated", success: true});
     }
 })
 
@@ -55,7 +55,7 @@ app.get('/user/:id', (req, res) => {
     if (!user) {
         res.status(404).json({message: "User not found", success: false});
     } else {
-        res.json({message: "User retrieved", success: true, user});
+        res.json({success: true, user});
     }
 })
 
