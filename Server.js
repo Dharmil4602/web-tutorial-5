@@ -27,7 +27,7 @@ app.post("/add", (req, res) => {
         res.status(400).json({message: "Please enter valid data", success: false});
     } else {
         const newUser = {
-            id: `${Date.now()}`,
+            id: `${Math.random().toString(36).slice(2)}`,
             firstName,
             email
         };
